@@ -10,7 +10,12 @@ app.use(cors())
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
-  console.log(`http://localhost${port}`)
+  console.log(`http://localhost:${port}`)
 })
+
+// Aqui invocamos a las rutas!
+//TODO localhost/api/*
+app.use("/api", require("./routes"))
+app.use("/api", require("./routes/tracks"))
 
 dbConnect()
